@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>Art</title>
+    <script 
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <script type="text/javascript" src="kunst.js"></script>
+    <link rel="stylesheet" type="text/css" href="kunst.css">
+  </head>
+  <body>
+  <header>
+    <h1>My art page</h1>
+  </header>
+  <section>
+    <h2>About the artist</h2>
+    <p>I am woman who likes flowers, so naturally I made art with flowers in them.</p>
+  </section>
+  <section>
+    <h2>SVG art</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="svg-background">
+      <!-- Stems -->      
+      <circle cx="-20" cy="105" class="stem" r="80"/>
+      <circle cx="140" cy="71" class="stem" r="80"/>
+      <circle cx="140" cy="105" class="stem" r="80"/>
+      <!-- Leaves -->
+      <ellipse cx="55" cy="80" rx="5" ry="10" />
+      <ellipse cx="65" cy="85" rx="4" ry="9"/>
+      <!-- Hide -->
+      <rect x="0" y="7" width="100" height="100" />
+      <!-- Soil -->
+      <circle cx="40" cy="110" class="soil"
+      r="25" />
+      <circle cx="50" cy="107" class="soil"
+      r="25"/>
+      <circle cx="70" cy="110" class="soil"
+      r="25"/>
+      <circle cx="30" cy="115" class="soil"
+      r="25"/>
+      <!-- Left flower -->
+      <circle cx="10" cy="23" class="petal" r="4"/>
+      <circle cx="5" cy="25" class="petal" r="4"/>
+      <circle cx="5" cy="31" class="petal" r="4"/>
+      <circle cx="10" cy="34" class="petal" r="4"/>
+      <circle cx="15" cy="31" class="petal" r="4"/>
+      <circle cx="16" cy="26" class="petal" r="4"/>
+      <circle cx="10" cy="28" class="flower-center" r="3"/>
+      <!-- Middle flower -->
+      <circle cx="80" cy="10" class="petal" r="4" />
+      <circle cx="75" cy="13" class="petal" r="4" />
+      <circle cx="74" cy="19" class="petal" r="4"/>
+      <circle cx="80" cy="21" class="petal" r="4"/>
+      <circle cx="85" cy="19" class="petal" r="4"/>
+      <circle cx="86" cy="14" class="petal" r="4"/>
+      <circle cx="80" cy="16" class="flower-center" r="3"/>
+      <!-- Right flower -->
+      <circle cx="90" cy="36" class="petal" r="4"/>
+      <circle cx="85" cy="40" class="petal" r="4"/>
+      <circle cx="85" cy="45" class="petal" r="4"/>
+      <circle cx="90" cy="48" class="petal" r="4"/>
+      <circle cx="95" cy="45" class="petal" r="4"/>
+      <circle cx="95" cy="40" class="petal" r="4"/>
+      <circle cx="90" cy="42" class="flower-center" r="3"/>
+    </svg>
+  
+  <!-- Night/day toggle -->
+    <button class="night-day-switch" type="checkbox">
+      <span class="day"><b>Day</b></span>
+      <span class="night"><b>Night</b></span>
+    </button>
+  </section>
+  
+  <section>
+    <h2>Canvas art</h2>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <button class="draw-button"><b>Draw</b></button>
+  </section>
+  <button class="documentation-button" aria-expanded="false">
+    <h2>Documentation</h2>
+    <span class="arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 7" aria-hidden="true">
+        <line x1="1" y1="1" x2="5.5" y2="6" />
+        <line x1="4.5" y1="6" x2="9" y2="1" />
+      </svg>
+    </span>
+    </button>
+    <div class="content">
+      <p>
+       <ul>
+        <li>
+          Jeg har brukt flexbox til å sentrere elementene i hver seksjon både
+          horisontalt og vertikalt, slik at alt kommer direkte under hverandre. 
+          Grunnen til at jeg har valgt å bruke flexbox over grid
+          er at jeg ikke har flere elementer som jeg ønsker å plassere på en viss måte,
+          men kun trengte å få elementene til å legge seg sentrert. 
+          Dette synes jeg er enkelt å få til med flexbox, og det krever mindre css
+          enn det grid gjør.
+        </li>
+        <br>
+        <li>
+          Jeg har laget en svg som illustrerer blomster ved å bruke circle, 
+          ellipse og rectangle elementene. SVG-en er laget inline i HTML. 
+          Canvas-bildet mitt illustrerer blomstene på tilnærmet lik måte, 
+          og er laget ved å tegne arcs, bezierCurves og lines i javascript.
+        </li>
+        <br>
+        <li>
+          Jeg har benyttet meg av jquery til å endre på fargene i svg-tegningen, 
+          gjøre det mulig å tegne hver del av canvas-tegningen og fjerne den igjen 
+          ved hjelp av en knapp, og til slutt gjøre dokumentasjonen åpen og lukkbar.
+        </li>
+        <br>
+        <li>
+          Jeg har åpnet HTMl-en i både chrome og firefox, 
+          og undersøkt hvordan elementene oppfører seg, 
+          og gjort nødvendige endringer for å tilpasse meg 
+          ettersom hvordan oppførselen endrer seg. 
+          Et eksempel på dette er at jeg i utgangspunktet 
+          ville definere radiusen til svg-elementene i css, 
+          men ettersom dette ikke virker i firefox, 
+          måtte jeg definere den i html-en igjen.
+        </li>
+        <br>
+        <li>
+          Jeg har benyttet meg hovedsakelig av w3-schools 
+          og Mozilla sin dokumentasjon på svg, html, css og canvas. 
+          Jeg har også lest mye på https://inclusive-components.design/ 
+          for å få inspirasjon og informasjon om hvordan jeg kunne lage elementer 
+          som er brukervennlige. 
+          For j-query har jeg for det meste benyttet meg av j-query sin egne dokumentasjon. 
+          Der dokumentasjonen ikke har gitt meg svar har stackOverflow gitt mye gode svar 
+          og løsninger på problemer som har dukket opp underveis.
+        </li>
+     </ul>  
+    </p>   
+   </div>
+  </body>
+</html>
